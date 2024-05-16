@@ -1,13 +1,9 @@
 const express = require('express')
+const { getHomepage, getBookingcare, postCreateUser } = require('../controllers/homeController')
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
-router.get('/bookingcare', (req, res) => {
-    // res.send('Hello World!')
-    res.render('sample.ejs')
-})
+router.get('/', getHomepage)
+router.get('/bookingcare', getBookingcare)
+router.post('/create-user', postCreateUser)
 
 module.exports = router;
