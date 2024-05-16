@@ -1,9 +1,12 @@
 const express = require('express')
-const { getHomepage, getBookingcare, postCreateUser } = require('../controllers/homeController')
+const { getHomepage, postCreateUser, getCreateUser, getUpdateUser } = require('../controllers/homeController')
 const router = express.Router();
 
 router.get('/', getHomepage)
-router.get('/bookingcare', getBookingcare)
+// Create users
+router.get('/create', getCreateUser)
 router.post('/create-user', postCreateUser)
+//Update Users
+router.get('/update/:userID', getUpdateUser)
 
 module.exports = router;
